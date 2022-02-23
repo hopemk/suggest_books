@@ -56,7 +56,6 @@ class BookSuggestionService {
             sameAgeFavourite.addAll(reader1.getFavouriteBooks());
         }
         Set<String> suggestedBooks = books.stream()
-                .filter(b -> b.getRating() >= 4)
                 .filter(b -> reader.getFavouriteGenres().contains(b.getGenre()))
                 .filter(b -> b.getAuthor() == author)
                 .filter(b -> sameAgeFavourite.contains(b))
